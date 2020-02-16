@@ -3,10 +3,10 @@ import java.security.SecureRandom;
 import java.util.Scanner; 
 //used geeksforgeeks.com to learn to use the random number generator 
 public class CAI1 {
-	static Scanner scan = new Scanner(System.in);
+
 	public static void main(String[] args) {
 		quiz();
-		scan.close();
+
 	}
 
 	
@@ -30,7 +30,9 @@ public class CAI1 {
 	}
 	
 	public static int readResponse() {
+		Scanner scan = new Scanner(System.in);
 		int studentAnswer = scan.nextInt();
+		//scan.close();
 		return studentAnswer;
 	}
 	
@@ -53,7 +55,7 @@ public class CAI1 {
 	public static void displayIncorrectResponse(){
 		System.out.println("No. please try again!");
 	}
-}
+	
 	/*
 	-quiz method:
 	Create 2 random numbers with the SecureRandom object between 0-9
@@ -81,4 +83,4 @@ public class CAI1 {
 	 runs your program by calling the quiz method.
 
 	*/
-
+}
