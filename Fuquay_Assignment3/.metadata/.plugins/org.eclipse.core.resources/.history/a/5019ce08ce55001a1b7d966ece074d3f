@@ -3,7 +3,7 @@ package fuquay_problem1;
 	import java.security.SecureRandom;
 	import java.util.Scanner; 
 	//used geeksforgeeks.com to learn to use the random number generator 
-	public class CAI3 {
+	public class CAI4 {
 		static Scanner scan = new Scanner(System.in);
 		public static void main(String[] args) {
 			quiz();
@@ -13,10 +13,10 @@ package fuquay_problem1;
 		
 		public static void quiz() {
 			int correctans =0;
+			int studentlevel = readDifficulty();
 	        for(int i =0; i<10; i++) {
-	        	SecureRandom rand = new SecureRandom(); 
-				int num_one = rand.nextInt(10); 
-		        int num_two = rand.nextInt(10);
+				int num_one = generateQuestionArguemnt(studentlevel);
+		        int num_two = generateQuestionArguemnt(studentlevel);
 		        int correctAnswer = num_one * num_two;
 	        	askQuestion(num_one, num_two);
 	        	int studentAnswer= readResponse();
@@ -34,6 +34,27 @@ package fuquay_problem1;
 	        System.exit(0);
 	        }
 		}
+		public static int generateQuestionArguemnt(int difficultLevel) {
+			SecureRandom rand = new SecureRandom(); 
+			switch(difficultLevel) {
+			case 1:
+				int rannumone = rand.nextInt(10);
+				return rannumone;
+			case 2:
+				int rannumtwo = rand.nextInt(100);
+				return rannumtwo;
+			case 3:
+				int rannumthree = rand.nextInt(1000);
+				return rannumthree;
+			case 4:
+				int rannumfour = rand.nextInt(10000);
+				return rannumfour;
+			default:
+				System.out.println("Sorry that is not a valid choice level 1 will be assigned");
+				int rannumfive = rand.nextInt(10);
+				return rannumfive;
+			}
+		}
 		
 		public static void askQuestion(int num_one, int num_two) {
 			System.out.printf("What is %d times %d?\n", num_one, num_two);
@@ -43,6 +64,11 @@ package fuquay_problem1;
 		public static int readResponse() {
 			int studentAnswer = scan.nextInt();
 			return studentAnswer;
+		}
+		public static int readDifficulty() {
+			System.out.println("Please enter a difficultly level of 1,2,3 or 4");
+			int difficultyLevel = scan.nextInt();
+			return difficultyLevel;
 		}
 		
 		public static int isAnswerCorrect(int studentAnswer, int correctAnswer, int correctans) {
@@ -118,42 +144,14 @@ package fuquay_problem1;
 		}
 
 }
-	/*
-	Modify the program from Part 2 to use your question generation method to ask the student
-	10 different questions. Give students only one chance at answering each question. 
-	Count the number of correct and incorrect responses typed by the student. 
-	After the program has asked 10 questions (and the student types 10 answers), 
-	your program should calculate the percentage that are correct. If the percentage is lower 
-	than 75%, display "Please ask your teacher for extra help.", then reset the program
-	so another student can try it. If the percentage is 75% or higher
-	, display "Congratulations, you are ready to go to the next level!", then reset 
-	the program so another student can try it.
-	
-	Multiplication problems shall contain two numbers sampled from a
-	 uniform random distribution in the range of 0 to 9 (inclusive)
-	The program shall display a random positive message if the student provides a correct response
-	The program shall display a random negative message if the student provides an incorrect response
-	The program shall display the student's score after the student has attempted to solve 10 problems
-	The student's score shall be the percentage of problems correctly solved
-	The program shall display the message "Please ask your teacher for extra help." if 
-	the student's score is less than 75%
-	The program shall display the message "Congratulations, you are ready to go to the next level!" 
-	if the student's score is greater than or equal to 75%
-	The program shall ask the student if they want to solve a new problem set 
-	after the score message has been displayed
-	The program shall restart when the student agrees to solve a new problem set
-	The program shall terminate when the student declines to solve another problem set
-	Create a method called "quiz" that contains the program logic
-	Create a function called "askQuestion" that prints the problem to the screen
-	Create a function called "readResponse" that reads the answer from the student
-	Create a function called "isAnswerCorrect" that checks to see if the student's 
-	answer matches the correct answer to the problem
-	Create a function called "displayCorrectResponse" that prints out the 
-	response when a student enters a correct answer
-	Create a function called "displayIncorrectResponse" that prints out the response 
-	when a student enters an incorrect answer
-	Create a function called "displayCompletionMessage" that prints out the studen't 
-	score and appropriate score response
-	Create a main method that runs your program by calling the "quiz" method
-	 */
-	
+/*
+Modify the program from Part 3 to allow the user to enter a difficulty level.
+At a difficulty level of 1, the program should use only single-digit numbers in the problems; 
+at a difficulty level of 2, numbers as large as two digits, and so on. Allow for four levels of 
+difficulty.
+create a function called "readDifficulty" that reads the difficulty levelfrom the student
+create a function called "generateQuestionArgument" that uses the difficulty level to generate
+ a random number
+ 
+
+*/

@@ -103,13 +103,11 @@ package fuquay_problem1;
 			}
 		}
 		public static void displayCompletionMethod(int correctans){
-			float percentcorrect = (correctans *100 )/ 10;
+			float percentcorrect = (correctans / 10) * 100;
 			if(percentcorrect < 75) {
-				System.out.println("Your score is  " +percentcorrect+"%");
 				System.out.println("Please ask your teacher for extra help.");
 			}
 			else {
-				System.out.println("Your score is  " +percentcorrect+"%");
 				System.out.println("Congratulations, you are ready to go to the next level!");
 			}
 		}

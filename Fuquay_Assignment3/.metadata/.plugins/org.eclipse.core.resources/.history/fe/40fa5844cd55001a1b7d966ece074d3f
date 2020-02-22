@@ -1,0 +1,14 @@
+package fuquay_problem1;
+
+public class CAI4 {
+
+}
+/*
+Modify the program from Part 3 to allow the user to enter a difficulty level.
+At a difficulty level of 1, the program should use only single-digit numbers in the problems; 
+at a difficulty level of 2, numbers as large as two digits, and so on. Allow for four levels of 
+difficulty.
+create a function called "readDifficulty" that reads the difficulty levelfrom the student
+creat a function called "generateQuestionArgument" that uses the difficulty level to generate a random number
+cread
+*/
