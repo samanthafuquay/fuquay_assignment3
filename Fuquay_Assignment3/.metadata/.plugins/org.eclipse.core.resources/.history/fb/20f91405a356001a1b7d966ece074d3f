@@ -1,0 +1,14 @@
+package fuquay_problem2;
+
+public class SavingsAccountTest {
+
+	public SavingsAccountTest() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

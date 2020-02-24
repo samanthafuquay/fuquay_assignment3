@@ -1,0 +1,23 @@
+package fuquay_problem2;
+
+public class SavingsAccountTest {
+
+	public static void main(String[] args) {
+	
+	
+
+	}
+
+}
+/*
+ -write a program called SavingsAccountTest to test class SavingsAccount
+-Instantiate two SavingsAccount objects, saver1, saver2 with balances of 
+of $2000.00 and $3000.00, respectively.
+-set aunnualInterestRate to 4%
+-calculate the monthly interest for each of 12 months
+-and print the monthly balances for both savers
+-call modifyInterestRate
+-set the annualInterestRate to 5% 
+-calculate the next months interest
+-print new balances for both savers.
+*/

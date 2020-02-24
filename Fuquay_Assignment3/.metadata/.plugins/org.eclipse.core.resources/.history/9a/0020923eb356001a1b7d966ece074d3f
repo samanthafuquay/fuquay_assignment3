@@ -1,0 +1,31 @@
+package fuquay_problem2;
+
+public class SavingsAccountTest {
+
+	public static void main(String[] args) {
+	SavingsAccount saver1 = new SavingsAccount(2000.00);
+	SavingsAccount saver2 = new SavingsAccount(3000.00);
+	SavingsAccount.annualInterestRate =.04;
+	double newBalance =saver1.getSavingsBalance() + 
+			saver1.calculateMonthlyInterest(saver1.getSavingsBalance(), 
+			SavingsAccount.annualInterestRate);
+	saver1.setSavingsBalance(newBalance);
+	System.out.println("Saver1 Month 1 balance = " +saver1.getSavingsBalance());
+	
+	
+
+	}
+
+}
+/*
+ -write a program called SavingsAccountTest to test class SavingsAccount
+-Instantiate two SavingsAccount objects, saver1, saver2 with balances of 
+of $2000.00 and $3000.00, respectively.
+-set aunnualInterestRate to 4%
+-calculate the monthly interest for each of 12 months
+-and print the monthly balances for both savers
+-call modifyInterestRate
+-set the annualInterestRate to 5% 
+-calculate the next months interest
+-print new balances for both savers.
+*/
